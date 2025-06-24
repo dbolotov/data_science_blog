@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -8,13 +9,16 @@ from scipy.ndimage import gaussian_filter1d
 from pykalman import KalmanFilter
 
 # Load data
-df_full = pd.read_csv(
-    "data/noisy_sine_timeseries.csv", parse_dates=["timestamp"], index_col="timestamp"
-)
+# df_full = pd.read_csv(
+#     "data/noisy_sine_timeseries.csv", parse_dates=["timestamp"], index_col="timestamp"
+# )
+
+BASE_DIR = os.path.dirname(__file__)
+csv_path = os.path.join(BASE_DIR, "data", "noisy_sine_timeseries.csv")
+
+df_full = pd.read_csv(csv_path, parse_dates=["timestamp"], index_col="timestamp")
 
 st.set_page_config(layout="wide")
-
-# --- Styling ---
 
 
 # --- Styling ---
