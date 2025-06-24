@@ -20,7 +20,7 @@ from pykalman import KalmanFilter
 # df_full = pd.read_csv("noisy_sine_timeseries.csv", parse_dates=["timestamp"], index_col="timestamp")
 
 BASE_DIR = os.path.dirname(__file__)
-csv_path = os.path.join(BASE_DIR, "noisy_sine_timeseries.csv")
+csv_path = os.path.join(BASE_DIR, "data/noisy_sine_timeseries.csv")
 df_full = pd.read_csv(csv_path, parse_dates=["timestamp"], index_col="timestamp")
 
 
