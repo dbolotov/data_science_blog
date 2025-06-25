@@ -9,24 +9,12 @@ from scipy.ndimage import gaussian_filter1d
 from pykalman import KalmanFilter
 
 # Load data
-# df_full = pd.read_csv(
-#     "data/noisy_sine_timeseries.csv", parse_dates=["timestamp"], index_col="timestamp"
-# )
-
-# BASE_DIR = os.path.dirname(__file__)
-# csv_path = os.path.join(BASE_DIR, "data", "noisy_sine_timeseries.csv")
-
-# df_full = pd.read_csv(csv_path, parse_dates=["timestamp"], index_col="timestamp")
-# df_full = pd.read_csv("noisy_sine_timeseries.csv", parse_dates=["timestamp"], index_col="timestamp")
-
 BASE_DIR = os.path.dirname(__file__)
 csv_path = os.path.join(BASE_DIR, "data/noisy_sine_timeseries.csv")
 df_full = pd.read_csv(csv_path, parse_dates=["timestamp"], index_col="timestamp")
 
-
-
+# Set Layout to "wide"
 st.set_page_config(layout="wide")
-
 
 # --- Styling ---
 st.markdown(
@@ -63,6 +51,11 @@ st.markdown(
         padding: 20px;
         border-radius: 6px;
     }
+
+    .block-container {
+        padding-top: 1rem !important;
+    }
+    </style>
     </style>
 """,
     unsafe_allow_html=True,
@@ -102,7 +95,7 @@ with left_col:
         "Explore how six smoothing techniques transform noisy time series data.\n\n"
         "Methods: "
         "[Moving Average](https://en.wikipedia.org/wiki/Moving_average), "
-        "[Exponential Moving Average](https://en.wikipedia.org/wiki/Exponential_smoothing), "
+        "[Exponential MA](https://en.wikipedia.org/wiki/Exponential_smoothing), "
         "[Savitzky-Golay](https://en.wikipedia.org/wiki/Savitzky–Golay_filter), "
         "[LOESS](https://en.wikipedia.org/wiki/Local_regression), "
         "[Gaussian Filter](https://en.wikipedia.org/wiki/Gaussian_filter), and "
@@ -260,9 +253,7 @@ with left_col:
                 "**Obs std**: Observation standard deviation. Expected noise in the observed data."
             ),
         )
-        kf_obs_noise = st.slider(
-            "Obs std", 0.001, 1.0, 0.2, step=0.01, key="kf_obs"
-        )
+        kf_obs_noise = st.slider("Obs std", 0.001, 1.0, 0.2, step=0.01, key="kf_obs")
 
 # --- Smoothing Calculations ---
 df["ma"] = (
@@ -409,17 +400,17 @@ with right_col:
         tvr_vals.append(1 - total_variation(df["kalman"]) / tv_orig)
         sdr_vals.append(1 - df["kalman"].std() / std_orig)
 
-    diag_df = pd.DataFrame({
-        method: [f"{tvr:.2f}", f"{sdr:.2f}"]
-        for method, tvr, sdr in zip(methods, tvr_vals, sdr_vals)
-    }, index=["TVR", "SDR"])
+    diag_df = pd.DataFrame(
+        {
+            method: [f"{tvr:.2f}", f"{sdr:.2f}"]
+            for method, tvr, sdr in zip(methods, tvr_vals, sdr_vals)
+        },
+        index=["TVR", "SDR"],
+    )
 
     st.dataframe(diag_df, use_container_width=False)
     # st.table(diag_df)
-    st.caption("**TVR (Total Variance Reduction)** measures how much each method reduces jaggedness in the signal. Higher values mean smoother output.\n" \
-    "**SDR (Standard Deviation Reduction)** compares variability before and after smoothing. Higher values mean more consistent, less noisy signals.")
-
-
-
-
-
+    st.caption(
+        "**TVR (Total Variance Reduction)** measures how much each method reduces jaggedness in the signal. Higher values mean smoother output.\n"
+        "**SDR (Standard Deviation Reduction)** compares variability before and after smoothing. Higher values mean more consistent, less noisy signals."
+    )
