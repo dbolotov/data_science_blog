@@ -14,15 +14,19 @@ This directory also includes a notebook with some initial plotting and explorati
 
 ## Datasets and Licensing
 
-This project uses a mix of real-world and synthetic datasets. Below are the licensing details for each:
+This project uses a mix of real-world and synthetic datasets. Below are the sources and licensing information:
 
-| Dataset                     | Source & Description                                                                                                      | License                                                                 |
-|----------------------------|---------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| **Sunspots**               | [Daily total sunspot number](https://www.sidc.be/SILSO/datafiles) from SILSO.                                              | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)         |
-| **Humidity (RH)** & **Wind Speed (WV)** | [Weather Long-term Time Series Forecasting](https://www.kaggle.com/datasets/alistairking/weather-long-term-time-series-forecasting) on Kaggle. | [MIT License](https://www.mit.edu/~amini/LICENSE.md)                   |
-| **Noisy Sine**             | Synthetic noisy sine wave. Generated for this project.                                                                      | None                                               |
-| **Process Modes and Anomalies** | Synthetic dataset simulating industrial process behavior with different operating modes and anomalies. Generated for this project.                                                 | None                                               |
+- **Sunspots**  
+  Daily total sunspot numbers from [SILSO](https://www.sidc.be/SILSO/datafiles). Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
 
+- **Humidity (RH)** and **Wind Speed (WV)**  
+  Weather time series from [Weather Long-term Time Series Forecasting](https://www.kaggle.com/datasets/alistairking/weather-long-term-time-series-forecasting) on Kaggle. Licensed under the [MIT License](https://www.mit.edu/~amini/LICENSE.md).
+
+- **Noisy Sine**  
+  Synthetic noisy sine wave generated for this project.
+
+- **Process Modes and Anomalies**  
+  Synthetic dataset simulating different industrial operating modes and injected anomalies, created for this project.
 
 
 
