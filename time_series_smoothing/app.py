@@ -83,7 +83,7 @@ method_colors = {
     "Kalman": "#17becf",
 }
 
-st.title("Time Series Smoothing Methods: an Interactive Visualizer")
+st.title("Time Series Smoothing: an Interactive Visualizer")
 
 left_col, spacer, right_col = st.columns([5, 0.5, 6])
 
