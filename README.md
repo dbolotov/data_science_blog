@@ -1,6 +1,6 @@
 ![Banner](images/banner_perlin_flow.png)
 
-# Data Science Blog
+# Data Science Projects
 
 This repository contains code and analysis for a set of data science projects focused on modeling, visualization, and signal processing.
 
