@@ -1,6 +1,10 @@
 # Data Science Blog
 
-This repo has the code and notebooks behind my data science projects. I write about the ideas on [Medium](https://medium.com/@dmitriy.bolotov), and keep everything organized on [dbolotov.github.io](dbolotov.github.io).
+Hi!
+
+This repository contains the code and notebooks behind my data science projects.
+
+I write about the projects on [Medium](https://medium.com/@dmitriy.bolotov), and keep everything organized on [dbolotov.github.io](dbolotov.github.io).
 
 
 ## Projects
