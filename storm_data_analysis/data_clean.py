@@ -5,7 +5,7 @@ import glob
 # Set up directories relative to the script's location
 base_dir = os.path.dirname(os.path.abspath(__file__))
 extracted_dir = os.path.join(base_dir, "data", "extracted")
-output_file = os.path.join(base_dir, "data", "cleaned_storm_data.parquet")
+output_file = os.path.join(base_dir, "data", "cleaned_storm_data_ca.parquet")
 
 # Columns to keep
 columns_to_keep = [
@@ -30,8 +30,13 @@ for file in glob.glob(os.path.join(extracted_dir, "*.csv")):
 
     original_total_rows += len(df)
 
-    # Fill NA values and filter rows
+    # Fill NA values
     df.fillna("0", inplace=True)
+
+    # Filter for California only
+    df = df[df['STATE'] == 'CALIFORNIA']
+
+    # Filter rows with impact
     mask = ~((df['INJURIES_DIRECT'] == '0') &
              (df['INJURIES_INDIRECT'] == '0') &
              (df['DEATHS_DIRECT'] == '0') &
@@ -51,5 +56,5 @@ combined_df.to_parquet(output_file, index=False)
 
 print("\nData cleaning complete.")
 print(f"Original total rows: {original_total_rows}")
-print(f"Rows after filtering: {filtered_total_rows}")
+print(f"Rows after filtering for CA and impact: {filtered_total_rows}")
 print(f"Saved cleaned data to: {output_file}")
