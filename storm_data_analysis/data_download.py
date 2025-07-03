@@ -1,5 +1,5 @@
 """
-This script downloads and extracts NOAA Storm Events data files (details, fatalities, ando/or locations)
+This script downloads and extracts NOAA Storm Events data files (details, fatalities, and/or locations)
 from user-supplied years. It saves compressed files to 'data/download', extracts them to 
 'data/extracted', and checks header consistency across the extracted CSVs.
 """

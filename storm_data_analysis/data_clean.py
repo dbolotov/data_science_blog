@@ -1,3 +1,12 @@
+"""
+This script processes NOAA Storm Events CSV files. It reads data from the
+'data/extracted' directory, filters for events that occurred in California, and retains only rows
+with measurable human or economic impact (i.e., injuries, deaths, or damage > $0). 
+
+Only selected columns relevant to analysis are kept. After filtering, the script combines the
+data and saves it as a compressed Parquet file: 'cleaned_storm_data_ca.parquet'.
+"""
+
 import os
 import pandas as pd
 import glob
