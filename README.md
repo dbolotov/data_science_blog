@@ -8,6 +8,7 @@ I write about the projects on [Medium](https://medium.com/@dmitriy.bolotov), and
 
 
 ## Projects
+- **Predicting Gym Member Churn to Support Targeted Retention**: Using behavioral and lifecycle data to reduce early membership loss. [Jupyter notebook](https://github.com/dbolotov/data_science_blog/blob/main/gym_churn_analysis/gym_churn_analysis.ipynb) | [Medium article](https://medium.com/@dmitriy.bolotov/predicting-gym-member-churn-to-support-targeted-retention-02fc7b0df8ca#142e)
 - **The Thermal Decay of Beverages: A Casual Overanalysis** 🍵: Real data and Newton’s Law of Cooling to compare how mugs lose heat over time. [Jupyter notebook](thermal_decay_of_beverages/thermal_decay_of_beverages.ipynb) | [Medium article](https://medium.com/@dmitriy.bolotov/the-thermal-decay-of-beverages-a-casual-overanalysis-0c9d863b861e)
 - **Time Series Smoothing**: A comparison of six different smoothing techniques on noisy data. [Jupyter notebook](time_series_smoothing/time_series_smoothing.ipynb) | [Medium article](https://medium.com/@dmitriy.bolotov/six-approaches-to-time-series-smoothing-cc3ea9d6b64f) | [Interactive Streamlit app](https://timeseriessmoothing.streamlit.app/)
 - **Severe Weather in California (2000–2024)**: An exploratory analysis of NOAA weather event data, with plots of damage, injuries, and deaths across event types and time. [Jupyter notebook (nbviewer)](https://nbviewer.org/github/dbolotov/data_science_blog/blob/main/storm_data_analysis/storm_data_analysis_ca.ipynb)
