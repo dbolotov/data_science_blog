@@ -4,7 +4,7 @@
 
 This repository contains code and analysis for a set of data science projects focused on modeling, visualization, and signal processing.
 
-I write about the projects on [Medium](https://medium.com/@dmitriy.bolotov), and keep everything organized on [dbolotov.github.io](dbolotov.github.io).
+I write about the projects on [Medium](https://medium.com/@dmitriy.bolotov), and keep everything organized on [dbolotov.github.io](https://www.dbolotov.github.io).
 
 
 ## Projects
